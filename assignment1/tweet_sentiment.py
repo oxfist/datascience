@@ -21,8 +21,7 @@ def derive_sentiment(tweets, scores):
         for term in terms:
             if term in scores:
                 tweet_sentiment += scores[str(term).lower()]
-        print(tweet_sentiment)
-            
+        print tweet_sentiment
 
 def main():
     sent_file = open(sys.argv[1])
