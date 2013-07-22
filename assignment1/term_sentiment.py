@@ -15,20 +15,12 @@ def read_tweets(file):
     return tweets
 
 def derive_sentiment(tweet, scores):
-    pos_sentiment = 0
-    neg_sentiment = 0
+    term_sentiment = 0.0
     terms = tweet["text"].split()
     for term in terms:
         if term in scores:
-        	sentiment = scores[str(term).lower()]
-        	if sentiment >= 0:
-        		pos_sentiment += 1
-        	else:
-        		neg_sentiment += 1
-    if neg_sentiment == 0:
-    	return 0
-    else:
-        return pos_sentiment / neg_sentiment
+        	term_sentiment += scores[str(term).lower()]
+    return term_sentiment / len(terms)
 
 def main():
     sent_file = open(sys.argv[1])
