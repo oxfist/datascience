@@ -27,8 +27,6 @@ def compute_overall_sum(sums):
 def calculate_frequency(sums, overall_sum):
     for key in sums:
         print key, sums[key]/overall_sum
-    
-
 
 def main():
     tweet_file = open(sys.argv[1])
