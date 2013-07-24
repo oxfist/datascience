@@ -12,10 +12,7 @@ def compute_totals(tweets):
     for tweet in tweets:
         terms = tweet["text"].split()
         for term in terms:
-            if term in sums:
-                sums[term] += 1
-            else:
-                sums[term] = 1
+            sums[term] = sums.get(term, 0) + 1
     return sums
 
 def compute_overall_sum(sums):
