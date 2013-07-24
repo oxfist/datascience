@@ -19,7 +19,7 @@ def derive_sentiment(tweet, scores):
     terms = tweet["text"].split()
     for term in terms:
         if term in scores:
-        	term_sentiment += scores[str(term).lower()]
+            term_sentiment += scores[str(term).lower()]
     return term_sentiment / len(terms)
 
 def main():
