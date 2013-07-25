@@ -16,6 +16,8 @@ def read_tweets(file):
 
 def derive_sentiment(tweets, scores):
     for tweet in tweets:
+        if "delete" in tweet.keys():
+           continue
         tweet_sentiment = 0
         terms = tweet["text"].split()
         for term in terms:
