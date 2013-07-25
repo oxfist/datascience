@@ -31,6 +31,8 @@ def main():
     tweet_file.close()
 
     for tweet in tweets:
+        if "delete" in tweet.keys():
+            cotinue
         tweet_sentiment = 0
         terms = tweet["text"].split()
         for term in terms:
