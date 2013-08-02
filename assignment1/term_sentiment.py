@@ -32,7 +32,7 @@ def main():
 
     for tweet in tweets:
         if "delete" in tweet.keys():
-            cotinue
+            continue
         tweet_sentiment = 0
         terms = tweet["text"].split()
         for term in terms:
